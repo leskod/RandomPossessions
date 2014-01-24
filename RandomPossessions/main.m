@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "BNRItem.h"
+#import "BNRContainer.h"
 
 int main(int argc, const char * argv[])
 {
@@ -64,6 +65,18 @@ int main(int argc, const char * argv[])
         
         //throws NSException
         //NSLog(@"%@", [items objectAtIndex:10]);
+        
+        
+        NSLog(@"Ok, lets create myContainer with alloc and init**************");
+        BNRContainer *myContainer = [[BNRContainer alloc] init];
+        
+        for (BNRItem *item in items) {
+            NSLog(@"adding item to container %@", item);
+            [myContainer addItem:item];
+        }
+        NSLog(@"logging myContainer %@", myContainer);
+        
+        
         
         
         items = nil;

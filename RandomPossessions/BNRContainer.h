@@ -11,8 +11,14 @@
 
 @interface BNRContainer : BNRItem //NSObject
 {
-    NSArray *subItems;
+    NSMutableArray *subItems;
+    
+    //int iItemsCount;
+    //int iItemsValueSum;
 }
+
+-(void) addItem:(BNRItem *)objItem;
+    
 
 
 
