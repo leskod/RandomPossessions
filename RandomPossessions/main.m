@@ -68,7 +68,8 @@ int main(int argc, const char * argv[])
         
         
         NSLog(@"Ok, lets create myContainer with alloc and init**************");
-        BNRContainer *myContainer = [[BNRContainer alloc] init];
+        //BNRContainer *myContainer = [[BNRContainer alloc] init];
+        BNRContainer *myContainer = [[BNRContainer alloc] initWithName:@"Container 1"];
         
         for (BNRItem *item in items) {
             NSLog(@"adding item to container %@", item);
@@ -76,6 +77,16 @@ int main(int argc, const char * argv[])
         }
         NSLog(@"logging myContainer %@", myContainer);
         
+        
+        
+        
+        BNRContainer *myContainer2 = [[BNRContainer alloc] initWithName:@"Container 2"];
+        
+        for (BNRItem *item in items) {
+            NSLog(@"adding item to container %@", item);
+            [myContainer2 addItem:item];
+        }
+        NSLog(@"logging myContainer2 %@", myContainer2);
         
         
         

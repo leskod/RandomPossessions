@@ -17,6 +17,9 @@
     //int iItemsValueSum;
 }
 
+
+-(id)initWithName:(NSString *)name;
+
 -(void) addItem:(BNRItem *)objItem;
     
 
