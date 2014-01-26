@@ -10,10 +10,15 @@
 
 @interface BNRItem : NSObject
 {
-    NSString *itemName;
-    NSString *serialNumber;
-    int valueInDollars;
-    NSDate *dateCreated;
+    // These all got synthesized
+//    NSString *itemName;
+//    NSString *serialNumber;
+//    int valueInDollars;
+//    NSDate *dateCreated;
+//    
+//    BNRItem *containedItem;
+//    __weak  BNRItem *container;
+    
 }
 
 +(id)randomItem;
@@ -27,16 +32,33 @@
          serialNumber:(NSString *)sNumber;
 
 
--(void)setItemName:(NSString *)str;
--(NSString *)itemName;
 
--(void)setSerialNumber:(NSString *)str;
--(NSString *)serialNumber;
+//-(void)setContainedItem:(BNRItem *)i;
+//-(BNRItem *)containedItem;
 
--(void)setValueInDollars:(int)i;
--(int)valueInDollars;
+//-(void)setContainer:(BNRItem *)i;
+//-(BNRItem *)container;
 
--(NSDate *)dateCreated;
+
+
+
+//-(void)setItemName:(NSString *)str;
+//-(NSString *)itemName;
+
+//-(void)setSerialNumber:(NSString *)str;
+//-(NSString *)serialNumber;
+
+//-(void)setValueInDollars:(int)i;
+//-(int)valueInDollars;
+
+//-(NSDate *)dateCreated;
+
+@property (nonatomic, strong) BNRItem *containedItem;
+@property (nonatomic, weak) BNRItem *container;
+@property (nonatomic, copy) NSString *itemName;
+@property (nonatomic, copy) NSString *serialNumber;
+@property (nonatomic) int valueInDollars;
+@property (nonatomic, readonly, strong) NSDate *dateCreated;
 
 
 

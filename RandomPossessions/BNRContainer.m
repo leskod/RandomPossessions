@@ -53,33 +53,35 @@
 }
 
 
--(NSString *)description
-{
-    int iItemsCount=0;
-    int iItemsValueSum = 0;
-    NSString *strItemList = @"";
-    
-    for (BNRItem *item in subItems) {
-        NSLog(@"doing counting stuff!!!!!!!!!!!!!!!!!!!!!!!!!");
-        iItemsCount++;
-        iItemsValueSum += [item valueInDollars];
-        strItemList = [[strItemList stringByAppendingString:[item description]] stringByAppendingString:@", "];
-    }
-    NSLog(@"count %d", iItemsCount);
-    NSLog(@"sum %d", iItemsValueSum);
-                
-    
-    
-    
-    NSString *descriptionString =
-    [[NSString alloc] initWithFormat:@"@%@ : Num of items %d Sum Worth $%d item list:  %@",
-     itemName,
-     iItemsCount,
-     iItemsValueSum,
-     strItemList];
-    
-    return descriptionString;
-}
+//-(NSString *)description
+//{
+//    int iItemsCount=0;
+//    int iItemsValueSum = 0;
+//    NSString *strItemList = @"";
+//    
+//    for (BNRItem *item in subItems) {
+//        NSLog(@"doing counting stuff!!!!!!!!!!!!!!!!!!!!!!!!!");
+//        iItemsCount++;
+//        iItemsValueSum += [item valueInDollars];
+//        strItemList = [[strItemList stringByAppendingString:[item description]] stringByAppendingString:@", "];
+//    }
+//    NSLog(@"count %d", iItemsCount);
+//    NSLog(@"sum %d", iItemsValueSum);
+//                
+//    
+//    NSString *descriptionString =
+//    [[NSString alloc] initWithFormat:@"@%@ : Num of items %d Sum Worth $%d item list:  %@",
+//    
+//    
+//    NSString *descriptionString =
+//    [[NSString alloc] initWithFormat:@"@%@ : Num of items %d Sum Worth $%d item list:  %@",
+//     //itemName,
+//     iItemsCount,
+//     iItemsValueSum,
+//     strItemList];
+//    
+//    return descriptionString;
+//}
 
 
 

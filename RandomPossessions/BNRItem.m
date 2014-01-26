@@ -9,6 +9,9 @@
 #import "BNRItem.h"
 
 @implementation BNRItem
+@synthesize itemName;
+@synthesize containedItem, container, serialNumber, valueInDollars, dateCreated;
+
 
 +(id)randomItem
 {
@@ -63,37 +66,71 @@
     return self;
 }
 
--(void)setItemName:(NSString *)str
+-(void)dealloc
 {
-    itemName = str;
-}
--(NSString *)itemName
-{
-    return itemName;
+    NSLog(@"Destroyed: %@", self);
 }
 
--(void)setSerialNumber:(NSString *)str
-{
-    serialNumber = str;
-}
--(NSString *)serialNumber
-{
-    return serialNumber;
-}
 
--(void)setValueInDollars:(int)i
-{
-    valueInDollars=i;
-}
--(int)valueInDollars
-{
-    return valueInDollars;
-}
 
--(NSDate *)dateCreated
+-(void)SetContainedItem:(BNRItem *)i
 {
-    return dateCreated;
+    containedItem = i;
+    
+    //when given an item to contain, the contained
+    //item will be given a pointer to its container
+    [i setContainer:self];
 }
+//-(BNRItem *)containedItem
+//{
+//    return containedItem;
+//}
+//
+//-(void)setContainer:(BNRItem *)i
+//{
+//    container = i;
+//}
+//-(BNRItem *)container
+//{
+//    return container;
+//}
+//
+//
+//
+//
+//
+//
+//-(void)setItemName:(NSString *)str
+//{
+//    itemName = str;
+//}
+//-(NSString *)itemName
+//{
+//    return itemName;
+//}
+//
+//-(void)setSerialNumber:(NSString *)str
+//{
+//    serialNumber = str;
+//}
+//-(NSString *)serialNumber
+//{
+//    return serialNumber;
+//}
+//
+//-(void)setValueInDollars:(int)i
+//{
+//    valueInDollars=i;
+//}
+//-(int)valueInDollars
+//{
+//    return valueInDollars;
+//}
+//
+//-(NSDate *)dateCreated
+//{
+//    return dateCreated;
+//}
 
 -(NSString *)description
 {

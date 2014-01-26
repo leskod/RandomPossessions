@@ -18,7 +18,11 @@ int main(int argc, const char * argv[])
         // insert code here...
         //NSLog(@"Hello, World!");
         
-        NSMutableArray *items = [[NSMutableArray alloc] init];
+        //NSMutableArray *items = [[NSMutableArray alloc] init];
+        
+        
+        
+        
         
         //[items addObject:@"One"];
         //[items addObject:@"Two"];
@@ -49,48 +53,70 @@ int main(int argc, const char * argv[])
         
         
         
-        for (int i = 0 ; i < 10 ; i++) {
-            BNRItem *p = [BNRItem randomItem];
-            [items addObject:p];
-        }
+        //for (int i = 0 ; i < 10 ; i++) {
+        //    BNRItem *p = [BNRItem randomItem];
+        //    [items addObject:p];
+        //}
         
-        for (int i = 0 ; i<[items count];i++){
-            NSLog(@"%@", [items objectAtIndex:i]);
-        }
+        //for (int i = 0 ; i<[items count];i++){
+        //    NSLog(@"%@", [items objectAtIndex:i]);
+        //}
         
         //fast enumeration
-        for (BNRItem *item in items) {
-            NSLog(@"fast enum %@", item);
-        }
+        //for (BNRItem *item in items) {
+        //    NSLog(@"fast enum %@", item);
+        //}
         
         //throws NSException
         //NSLog(@"%@", [items objectAtIndex:10]);
         
         
-        NSLog(@"Ok, lets create myContainer with alloc and init**************");
-        //BNRContainer *myContainer = [[BNRContainer alloc] init];
-        BNRContainer *myContainer = [[BNRContainer alloc] initWithName:@"Container 1"];
-        
-        for (BNRItem *item in items) {
-            NSLog(@"adding item to container %@", item);
-            [myContainer addItem:item];
-        }
-        NSLog(@"logging myContainer %@", myContainer);
         
         
+        BNRItem *backpack = [[BNRItem alloc]init];
+        [backpack setItemName:@"Backpack"];
+        //[items addObject:backpack];
         
+        BNRItem *calculator =[[BNRItem alloc]init];
+        [calculator setItemName:@"Calculator"];
+        //[items addObject:calculator];
         
-        BNRContainer *myContainer2 = [[BNRContainer alloc] initWithName:@"Container 2"];
-        
-        for (BNRItem *item in items) {
-            NSLog(@"adding item to container %@", item);
-            [myContainer2 addItem:item];
-        }
-        NSLog(@"logging myContainer2 %@", myContainer2);
+        //[backpack setContainedItem:calculator];
         
         
         
-        items = nil;
+        
+        //NSLog(@"Ok, lets create myContainer with alloc and init**************");
+        ////BNRContainer *myContainer = [[BNRContainer alloc] init];
+        //BNRContainer *myContainer = [[BNRContainer alloc] initWithName:@"Container 1"];
+        
+        //for (BNRItem *item in items) {
+        //    NSLog(@"adding item to container %@", item);
+        //    [myContainer addItem:item];
+        //}
+        //NSLog(@"logging myContainer %@", myContainer);
+        
+        
+        
+        
+        //BNRContainer *myContainer2 = [[BNRContainer alloc] initWithName:@"Container 2"];
+        
+        //for (BNRItem *item in items) {
+        //    NSLog(@"adding item to container %@", item);
+        //    [myContainer2 addItem:item];
+        //}
+        //NSLog(@"logging myContainer2 %@", myContainer2);
+        
+        
+        
+        //NSLog(@"Setting items to nill...");
+        //items = nil;
+        
+        
+        backpack=nil;
+        NSLog(@"Container: %@", [calculator container]);
+        calculator=nil;
+        
     }
     return 0;
 }
